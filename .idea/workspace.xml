@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="709df681-bc01-4133-a056-ea2ca63e892c" name="Default Changelist" comment="" />
+    <list default="true" id="03d90e3d-b605-4258-8a0f-e0efd2516441" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,25 +15,26 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectId" id="1alS5oU9d5hIkWUcn9UVkMXeKcR" />
+  <component name="ProjectId" id="1bKALZhj9nJPl2v67fzSXEk5Fl4" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Flask server.Sisond">
-    <configuration name="checker" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Sisond" />
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming Projects\P\moodleconverter\static" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Flask server.moodleconverter">
+    <configuration name="process_file" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="moodleconverter" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -45,7 +46,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/checker.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/process_file.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -54,36 +55,15 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="wsgi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Sisond" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wsgi.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Sisond" type="Python.FlaskServer">
-      <module name="Sisond" />
+    <configuration name="moodleconverter" type="Python.FlaskServer">
+      <option name="flaskDebug" value="true" />
+      <module name="moodleconverter" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
       <option name="targetType" value="PATH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="SDK_HOME" value="D:\Programs\Anaconda3\envs\moodleconverter\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -91,10 +71,13 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Flask server.moodleconverter" />
+      <item itemvalue="Python.process_file" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.checker" />
-        <item itemvalue="Python.wsgi" />
+        <item itemvalue="Python.process_file" />
       </list>
     </recent_temporary>
   </component>
@@ -103,62 +86,66 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="709df681-bc01-4133-a056-ea2ca63e892c" name="Default Changelist" comment="" />
-      <created>1587308506101</created>
+      <changelist id="03d90e3d-b605-4258-8a0f-e0efd2516441" name="Default Changelist" comment="" />
+      <created>1588370355473</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1587308506101</updated>
-      <workItem from="1587308507880" duration="30000" />
-      <workItem from="1587308565381" duration="4750000" />
-      <workItem from="1587314090101" duration="1256000" />
-      <workItem from="1587394381027" duration="2026000" />
+      <updated>1588370355473</updated>
+      <workItem from="1588370444979" duration="15619000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587308581395">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588372328108">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587308581395" />
-    <state x="532" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587310182050">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040/1920.235.1366.728@0.0.1920.1040" timestamp="1588372328108" />
+    <state width="653" height="466" key="DebuggerActiveHint" timestamp="1588374347714">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="532" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587310182050" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1587318892554">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="653" height="466" key="DebuggerActiveHint/-1920.0.1920.1040/0.0.1920.1040/1920.235.1366.728@0.0.1920.1040" timestamp="1588374347714" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1588386092522">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587318892554" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1587318892554">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.235.1366.728@0.0.1920.1040" timestamp="1588386092522" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1588386092522">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587318892554" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1587318892554">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040/1920.235.1366.728@0.0.1920.1040" timestamp="1588386092522" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1588386092522">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587318892554" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1587318892554">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040/1920.235.1366.728@0.0.1920.1040" timestamp="1588386092522" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1588386092522">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587318892554" />
-    <state x="277" y="55" key="SettingsEditor" timestamp="1587308605515">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040/1920.235.1366.728@0.0.1920.1040" timestamp="1588386092522" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1588386092523">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="277" y="55" key="SettingsEditor/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587308605515" />
-    <state x="444" y="243" key="com.intellij.ide.util.TipDialog" timestamp="1587394381746">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.235.1366.728@0.0.1920.1040" timestamp="1588386092523" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1588386092523">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="444" y="243" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587394381746" />
-    <state x="2336" y="254" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1587308565244" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040/1920.235.1366.728@0.0.1920.1040" timestamp="1588386092523" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1588386092523">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040/1920.235.1366.728@0.0.1920.1040" timestamp="1588386092523" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1588386092523">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040/1920.235.1366.728@0.0.1920.1040" timestamp="1588386092523" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588372615382">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040/1920.235.1366.728@0.0.1920.1040" timestamp="1588372615382" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Sisond$Sisond.coverage" NAME="Sisond Coverage Results" MODIFIED="1587314205177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/Sisond$checker.coverage" NAME="checker Coverage Results" MODIFIED="1587313635268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Sisond$wsgi.coverage" NAME="wsgi Coverage Results" MODIFIED="1587311473741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/moodleconverter$moodleconverter.coverage" NAME="moodleconverter Coverage Results" MODIFIED="1588385773001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/moodleconverter$process_file.coverage" NAME="process_file Coverage Results" MODIFIED="1588379304690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
