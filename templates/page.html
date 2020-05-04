@@ -27,7 +27,7 @@
                 <li>В документе должны быть только вопросы и ответы</li>
                 <li>Вопросы разделяются <b>одной</b> пустой строкой</li>
                 <li>Нумерацию вопросов (если она распознаётся Word) можно оставить</li>
-                <li>Оформление должно быть очищено (ластик) <a href="img/clear_formatting.png">(пример)</a> </li>
+                <li>Оформление должно быть очищено (ластик) <a href="img/clear_formatting.png">(пример)</a></li>
             </ul>
             <p><b>Инструкция</b></p>
             <ol>
@@ -41,7 +41,8 @@
             </ol>
             <p>Сделал <a style="color: #416dea" href="https://vk.com/wndenis" target="_blank">wndenis</a>
                 вместе с <a style="color: #416dea" href="https://vk.com/dream2904" target="_blank">eklera</a></p>
-            <p>Проблемы? Писать сюда ----> <a style="color: #416dea" href="https://vk.com/wndenis" target="_blank">помогите</a></p>
+            <p>Проблемы? Писать сюда ----> <a style="color: #416dea" href="https://vk.com/wndenis" target="_blank">помогите</a>
+            </p>
             <p>Обработано {{ stats }} файлов</p>
 
         </article>
@@ -56,7 +57,11 @@
                     <span class="file-msg">или перетащите его сюда</span>
                     <input type="file" name="userDocument" accept="application/msword, .docx" class="file-input">
                 </div>
-                <input type="checkbox" name="numeric">Числовой вопрос
+                <div class="double unselectable">
+                    <label>
+                        <input type="checkbox" name="numeric">Числовой вопрос
+                    </label>
+                </div>
 
                 <div id="results" class="list-bg hidden">
                     <h2 id="filename" class="hidden">Если вы это видите, обновите страницу</h2>
