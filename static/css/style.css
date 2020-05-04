@@ -163,26 +163,17 @@ p {
     line-height: 1.5;
 }
 a, a:visited {
-    text-decoration: none;
-    color: #3e3e4d;
+    /*text-decoration: none;*/
+    color: #3e3ebd;
+    /*color: #ff0000;*/
     font-weight: 500;
 }
 a:hover, a:visited:hover {
-    text-decoration: underline;
-    color: #3e3e4d;
+    /*text-decoration: underline;*/
+    color: #2525ac;
 }
-/*.container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 20px;
-}*/
-/*.button-container {
-    display: flex;
-    margin: 60px auto;
-    flex-wrap: wrap;
-    justify-content: center;
-}*/
+
+
 .button {
     display: flex;
     overflow: hidden;
