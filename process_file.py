@@ -1,5 +1,6 @@
 import os
 import docx
+import re
 
 # Const STYLE_MULTIPLECHOICEQ = "ВопрМножВыбор"
 # Const STYLE_RIGHT_ANSWER = "ВерныйОтвет"
@@ -42,6 +43,8 @@ def process(input_folder, filename, output_folder):
     input_filename = os.path.join(input_folder, filename)
     output_filename = os.path.join(output_folder, filename)
 
+    star_pattern = re.compile(r"\*+ *")
+
     print(f"opening {input_filename}")
     document = docx.Document(input_filename)
 
@@ -50,12 +53,18 @@ def process(input_folder, filename, output_folder):
 
     paragraphs = document.paragraphs
     for para in paragraphs:
-        current_empty = len(para.text) == 0
+        current_empty = len(para.runs) == 0
+        print(f"Runs: {len(para.runs)} considered {'empty' if current_empty else 'not empty'}")
+        print(f"Text: {' '.join(elem.text for elem in para.runs)}")
         if not current_empty:
             if prev_was_empty:  # вопрос
                 para.style = question_style
             else:               # ответ
-                if para.text[0] == "*":
+                txt = para.runs[0].text
+                if txt and txt[0] == "*":
+                    para.runs[0].text = re.sub(star_pattern, "", txt, 1)
+                    if len(para.runs[0].text) == 0:
+                        para.runs[0].text = " "
                     para.style = right_style  # правильный
                 else:
                     para.style = wrong_style  # неправильный
