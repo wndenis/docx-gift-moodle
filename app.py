@@ -16,6 +16,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def hello_world():
     if request.method == "POST":
         try:
+            numeric = "numeric" in request.form.keys()
             file = request.files['userDocument']
             secure_name = secure_filename(file.filename)
             name = uuid.uuid4().hex + ".docx"
@@ -24,7 +25,7 @@ def hello_world():
             is_valid = process_file.validate(app.config['UPLOAD_FOLDER'], name)
 
             if is_valid:
-                process_file.process(app.config['UPLOAD_FOLDER'], name, DOWNLOAD_FOLDER)
+                process_file.process(app.config['UPLOAD_FOLDER'], name, DOWNLOAD_FOLDER, numeric=numeric)
                 # todo: notify if errors
                 inc_stats()
                 return make_response(name, 200)

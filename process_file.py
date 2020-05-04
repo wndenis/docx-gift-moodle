@@ -6,6 +6,7 @@ import re
 # Const STYLE_RIGHT_ANSWER = "ВерныйОтвет"
 # Const STYLE_WRONG_ANSWER = "НеверныйОтвет"
 question_style = "ВопрМножВыбор"
+question_numeric = "ВопрЧисловой"
 right_style = "ВерныйОтвет"
 wrong_style = "НеверныйОтвет"
 
@@ -39,11 +40,12 @@ def validate(input_folder, filename):
     return True
 
 
-def process(input_folder, filename, output_folder):
+def process(input_folder, filename, output_folder, numeric=False):
     input_filename = os.path.join(input_folder, filename)
     output_filename = os.path.join(output_folder, filename)
 
     star_pattern = re.compile(r"\*+ *")
+    numeric_answer_pattern = re.compile(r"[Оо]твет *[:;]* *")
 
     print(f"opening {input_filename}")
     document = docx.Document(input_filename)
@@ -52,24 +54,46 @@ def process(input_folder, filename, output_folder):
     current_empty = False
 
     paragraphs = document.paragraphs
-    for para in paragraphs:
-        current_empty = len(para.runs) == 0
-        print(f"Runs: {len(para.runs)} considered {'empty' if current_empty else 'not empty'}")
-        print(f"Text: {' '.join(elem.text for elem in para.runs)}")
-        if not current_empty:
-            if prev_was_empty:  # вопрос
-                para.style = question_style
-            else:               # ответ
-                txt = para.runs[0].text
-                if txt and txt[0] == "*":
-                    para.runs[0].text = re.sub(star_pattern, "", txt, 1)
-                    if len(para.runs[0].text) == 0:
-                        para.runs[0].text = " "
-                    para.style = right_style  # правильный
-                else:
-                    para.style = wrong_style  # неправильный
 
-        prev_was_empty = current_empty
+    if numeric:
+        print("Numeric file")
+        for para in paragraphs:
+            current_empty = len(para.runs) == 0
+            if not current_empty:
+                if prev_was_empty:  # вопрос
+                    para.style = question_numeric
+                else:  # ответ
+                    txt = para.runs[0].text
+                    if txt and txt.lower().startswith("ответ"):
+                        para.runs[0].text = re.sub(numeric_answer_pattern, "", txt, 1)
+                        if len(para.runs[0].text) == 0:
+                            para.runs[0].text = " "
+                        para.style = right_style  # правильный
+                    else:
+                        para.style = wrong_style  # неправильный
+
+            prev_was_empty = current_empty
+
+    else:
+        print("Multi choice file")
+        for para in paragraphs:
+            current_empty = len(para.runs) == 0
+            # print(f"Runs: {len(para.runs)} considered {'empty' if current_empty else 'not empty'}")
+            # print(f"Text: {' '.join(elem.text for elem in para.runs)}")
+            if not current_empty:
+                if prev_was_empty:  # вопрос
+                    para.style = question_style
+                else:               # ответ
+                    txt = para.runs[0].text
+                    if txt and txt[0] == "*":
+                        para.runs[0].text = re.sub(star_pattern, "", txt, 1)
+                        if len(para.runs[0].text) == 0:
+                            para.runs[0].text = " "
+                        para.style = right_style  # правильный
+                    else:
+                        para.style = wrong_style  # неправильный
+
+            prev_was_empty = current_empty
     print("Saving document...")
     document.save(output_filename)
     print("Document saved.")
