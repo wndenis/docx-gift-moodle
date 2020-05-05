@@ -63,11 +63,14 @@ def process(input_folder, filename, output_folder, numeric=False):
                 if prev_was_empty:  # вопрос
                     para.style = question_numeric
                 else:  # ответ
-                    txt = para.runs[0].text
-                    if txt and txt.lower().startswith("ответ"):
-                        para.runs[0].text = re.sub(numeric_answer_pattern, "", txt, 1)
-                        if len(para.runs[0].text) == 0:
-                            para.runs[0].text = " "
+                    txt = para.text
+                    if txt and para.text.lower().startswith("ответ"):
+                        para.text = re.sub(numeric_answer_pattern, "", txt, 1)
+                        # if len(para.runs[0].text) == 0:
+                        #     para.runs[0].text = ""
+                        ans = para.text
+                        ans = ans.replace(",", ".", 1).strip()
+                        para.text = ans
                         para.style = right_style  # правильный
                     else:
                         para.style = wrong_style  # неправильный
