@@ -6,21 +6,20 @@ import re
 # Const STYLE_RIGHT_ANSWER = "ВерныйОтвет"
 # Const STYLE_WRONG_ANSWER = "НеверныйОтвет"
 question_style = "ВопрМножВыбор"
-question_numeric = "ВопрЧисловой"
+question_numeric_style = "ВопрЧисловой"
 right_style = "ВерныйОтвет"
 wrong_style = "НеверныйОтвет"
+category_style = "Категория"
 
-# class Cycle():
-#     def __init__(self):
-#         self.values = ["q", "a", "e"]
-#         self.current = 0
-#
-#     def current(self):
-#         return self.values[self.current]
-#
-#     def next(self):
-#         self.current += 1
-#         self.current %= len(self.values)
+# regexp
+answer_star = re.compile(r"\s*\*+\s*")
+empty_pat = re.compile(r"")
+numeration_question = re.compile(r"\s*[А-Яа-яA-Za-z]\s")
+numeration_answer = re.compile(r"")
+
+# markers
+category_marker = "##категория##"
+
 
 def validate(input_folder, filename):
     input_filename = os.path.join(input_folder, filename)
@@ -40,12 +39,28 @@ def validate(input_folder, filename):
     return True
 
 
+def paragraph_empty(para):
+    # либо 2 run
+    # либо 1 run с непечатаемым текстом
+    # критерии пустоты:
+    # 0 runs
+    # 1+ runs && para.text
+    return para.text
+
+
+def process_if_category(para):
+    if para.text.lower().startswith(category_marker):
+        para.text = para.text.replace(category_marker, "")
+        para.style = category_style
+        return True
+    return False
+
+
 def process(input_folder, filename, output_folder, numeric=False):
     input_filename = os.path.join(input_folder, filename)
     output_filename = os.path.join(output_folder, filename)
 
-    star_pattern = re.compile(r"\*+ *")
-    numeric_answer_pattern = re.compile(r"[Оо]твет *[:;]* *")
+    numeric_answer_pattern = re.compile(r"\s*[Оо]твет\s*[:;]*\s*")
 
     print(f"opening {input_filename}")
     document = docx.Document(input_filename)
@@ -60,11 +75,13 @@ def process(input_folder, filename, output_folder, numeric=False):
         for para in paragraphs:
             current_empty = len(para.runs) == 0
             if not current_empty:
-                if prev_was_empty:  # вопрос
-                    para.style = question_numeric
+                if process_if_category(para):
+                    current_empty = True
+                elif prev_was_empty:  # вопрос
+                    para.style = question_numeric_style
                 else:  # ответ
                     txt = para.text
-                    if txt and para.text.lower().startswith("ответ"):
+                    if txt and re.match(numeric_answer_pattern, txt):
                         para.text = re.sub(numeric_answer_pattern, "", txt, 1)
                         # if len(para.runs[0].text) == 0:
                         #     para.runs[0].text = ""
@@ -79,17 +96,28 @@ def process(input_folder, filename, output_folder, numeric=False):
 
     else:
         print("Multi choice file")
+        # for para in paragraphs:
+        #     print(para._p.xml)
+        #     continue
+        #     if 'a:graphicData' in para._p.xml:
+        #         print("img")
+        #     else:
+        #         print("text")
+        # exit()
+
         for para in paragraphs:
             current_empty = len(para.runs) == 0
             # print(f"Runs: {len(para.runs)} considered {'empty' if current_empty else 'not empty'}")
             # print(f"Text: {' '.join(elem.text for elem in para.runs)}")
             if not current_empty:
-                if prev_was_empty:  # вопрос
+                if process_if_category(para):
+                    current_empty = True
+                elif prev_was_empty:  # вопрос
                     para.style = question_style
                 else:               # ответ
                     txt = para.runs[0].text
-                    if txt and txt[0] == "*":
-                        para.runs[0].text = re.sub(star_pattern, "", txt, 1)
+                    if txt and txt[0] == "*":  # todo: использовать регексп
+                        para.runs[0].text = re.sub(answer_star, "", txt, 1)
                         if len(para.runs[0].text) == 0:
                             para.runs[0].text = " "
                         para.style = right_style  # правильный
